@@ -1,267 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>Test – Quel pôle es-tu à SBconsult ?</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-body {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f2f2f2;
-  padding: 40px 16px;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 32px;
-  font-size: 2rem;
-}
-
-.highlight-purple {
-  background: #eca6ff;
-  padding: 2px 8px;
-  border-radius: 0;
-}
-
-.question {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.question h3 {
-  margin-bottom: 12px;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.options label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: #f7f7f7;
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
-}
-
-.options label:hover {
-  transform: scale(1.02);
-}
-
-.options input {
-  display: none;
-}
-
-.options label.selected {
-  background: #cefdff;
-  font-weight: 600;
-}
-
-.options label.dimmed {
-  opacity: 0.45;
-}
-
-button {
-  display: block;
-  margin: 40px auto 0;
-  padding: 14px 34px;
-  border: none;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  background: #007AFF;
-  color: #ffffff;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-}
-
-button:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
-}
-
-#result {
-  display: none;
-  margin-top: 30px;
-  padding: 24px;
-  border-radius: 24px;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  background: #eca6ff;
-}
-</style>
-</head>
-
-<body>
-<div class="container">
-
-<h1>Test – Quel pôle es-tu à <span class="highlight-purple">SBconsult</span> ?</h1>
-
-<form id="quiz">
-
-<!-- Q1 -->
-<div class="question">
-<h3>1. Le matin, tu es plutôt…</h3>
-<div class="options">
-<label><input type="radio" name="q1" value="A"><span>A. “Ok, voici le programme de la journée.”</span></label>
-<label><input type="radio" name="q1" value="B"><span>B. “J'adore ce café ! C'est quelle marque ?”</span></label>
-<label><input type="radio" name="q1" value="C"><span>C. “Photo de mon café en story.”</span></label>
-<label><input type="radio" name="q1" value="D"><span>D. “Je coche ma to-do avant même de manger.”</span></label>
-<label><input type="radio" name="q1" value="E"><span>E. “Je check mes mails.”</span></label>
-<label><input type="radio" name="q1" value="F"><span>F. “C'est prévu dans le budget petit-dej ?”</span></label>
-<label><input type="radio" name="q1" value="G"><span>G. “Rdv à 9h, je note l’adresse et le numéro.”</span></label>
-</div>
-</div>
-
-<!-- Q2 -->
-<div class="question">
-<h3>2. Après une longue journée, tu préfères…</h3>
-<div class="options">
-<label><input type="radio" name="q2" value="A"><span>A. Prendre 5 minutes pour réfléchir à demain.</span></label>
-<label><input type="radio" name="q2" value="B"><span>B. Scroller sur LinkedIn.</span></label>
-<label><input type="radio" name="q2" value="C"><span>C. Aller en soirée.</span></label>
-<label><input type="radio" name="q2" value="D"><span>D. Ranger un peu ton espace pour y voir clair.</span></label>
-<label><input type="radio" name="q2" value="E"><span>E. Jouer à Roblox.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Faire du shopping sur Vinted.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Prendre des nouvelles de ta famille.</span></label>
-</div>
-</div>
-
-<!-- Q3 -->
-<div class="question">
-<h3>3. Ton bureau / ta table de travail, c’est…</h3>
-<div class="options">
-<label><input type="radio" name="q3" value="A"><span>A. Un léger chaos organisé que toi seul comprends.</span></label>
-<label><input type="radio" name="q3" value="B"><span>B. Des flyers, des programmes de conférences.</span></label>
-<label><input type="radio" name="q3" value="C"><span>C. Des stylos colorés, stickers, trucs mignons.</span></label>
-<label><input type="radio" name="q3" value="D"><span>D. Chaque chose à sa place, point.</span></label>
-<label><input type="radio" name="q3" value="E"><span>E. Rempli de câbles, chargeurs, écrans.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Un mélange de papiers et de tickets de caisse.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Carnet d'adresses, post-its avec les RDV et listes.</span></label>
-</div>
-</div>
-
-<!-- Q4 -->
-<div class="question">
-<h3>4. Quand tu dois prendre une décision de groupe…</h3>
-<div class="options">
-<label><input type="radio" name="q4" value="A"><span>A. Tu tranches et tu assumes.</span></label>
-<label><input type="radio" name="q4" value="B"><span>B. Tu compares les options possibles.</span></label>
-<label><input type="radio" name="q4" value="C"><span>C. Tu choisis ce qui fera le plus plaisir à tout le monde.</span></label>
-<label><input type="radio" name="q4" value="D"><span>D. Tu listes les "pour/contre" dans ta tête.</span></label>
-<label><input type="radio" name="q4" value="E"><span>E. Tu crées un petit sondage ou un outil pour décider.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Tu compares les options niveau budget/avantages.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Tu vérifies les dispos de chacun dans le calendrier.</span></label>
-</div>
-</div>
-
-<!-- Q5 -->
-<div class="question">
-<h3>5. En soirée, on te trouve plutôt…</h3>
-<div class="options">
-<label><input type="radio" name="q5" value="A"><span>A. À vérifier que tout le monde va bien.</span></label>
-<label><input type="radio" name="q5" value="B"><span>B. A prendre des contacts.</span></label>
-<label><input type="radio" name="q5" value="C"><span>C. A faire des vidéos de la soirée.</span></label>
-<label><input type="radio" name="q5" value="D"><span>D. À alerter en cas de VSS.</span></label>
-<label><input type="radio" name="q5" value="E"><span>E. Proche de la musique, des lumières, de la technique.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Tu vois comment limiter les pertes de nourritures/boissons.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. A proposer des jeux.</span></label>
-</div>
-</div>
-
-<!-- Q6 -->
-<div class="question">
-<h3>6. Face à un gros imprévu…</h3>
-<div class="options">
-<label><input type="radio" name="q6" value="A"><span>A. Tu gardes ton calme et tu recadres tout le monde.</span></label>
-<label><input type="radio" name="q6" value="B"><span>B. Tu fais appel à tes contacts.</span></label>
-<label><input type="radio" name="q6" value="C"><span>C. Tu dédramatises et tu fais rire.</span></label>
-<label><input type="radio" name="q6" value="D"><span>D. Tu choisis la meilleure des solutions proposées.</span></label>
-<label><input type="radio" name="q6" value="E"><span>E. Tu trouves une solution “système D” ou tech.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Tu estimes l'impact financier.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Tu met à jour la liste des contacts d'urgence.</span></label>
-</div>
-</div>
-
-<!-- Q7 -->
-<div class="question">
-<h3>7. Ton appli préférée, c’est plutôt…</h3>
-<div class="options">
-<label><input type="radio" name="q7" value="A"><span>A. Calendrier</span></label>
-<label><input type="radio" name="q7" value="B"><span>B. LinkedIn</span></label>
-<label><input type="radio" name="q7" value="C"><span>C. Tiktok</span></label>
-<label><input type="radio" name="q7" value="D"><span>D. Notes</span></label>
-<label><input type="radio" name="q7" value="E"><span>E. Discord</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Google Wallet</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Mail</span></label>
-</div>
-</div>
-
-<!-- Q8 -->
-<div class="question">
-<h3>8. Quand tu prends des notes…</h3>
-<div class="options">
-<label><input type="radio" name="q8" value="A"><span>A. Tu notes les grandes lignes, le reste est dans ta tête.</span></label>
-<label><input type="radio" name="q8" value="B"><span>B. Tu notes les mots clés.</span></label>
-<label><input type="radio" name="q8" value="C"><span>C. Tu mets des couleurs, des flèches, des schémas.</span></label>
-<label><input type="radio" name="q8" value="D"><span>D. Tu écris propre, structuré, avec titres et sous-titres.</span></label>
-<label><input type="radio" name="q8" value="E"><span>E. Tu utilises Gemini Pro pour prendre des notes à ta place.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Tu numérotes les pages .</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Tu fais des bullets points.</span></label>
-</div>
-</div>
-
-<!-- Q9 -->
-<div class="question">
-<h3>9. On te confie une enveloppe avec de l’argent pour un cadeau commun, tu…</h3>
-<div class="options">
-<label><input type="radio" name="q9" value="A"><span>A. La gardes précieusement.</span></label>
-<label><input type="radio" name="q9" value="B"><span>B. Tu cherches à augmenter le nombre de participants. </span></label>
-<label><input type="radio" name="q9" value="C"><span>C. Fais une blague du style “je pars avec, ciao”.</span></label>
-<label><input type="radio" name="q9" value="D"><span>D. Tu vérifies si ce sont des vrais billets.</span></label>
-<label><input type="radio" name="q9" value="E"><span>E. Tu le convertis en Bitcoin.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Comptes l’argent.</span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Tu notes qui y a contribué.</span></label>
-</div>
-</div>
-
-<!-- Q10 -->
-<div class="question">
-<h3>10. Pour toi, un message bien envoyé c’est…</h3>
-<div class="options">
-<label><input type="radio" name="q10" value="A"><span>A. Envoyé à temps, même si ce n'est pas parfait.</span></label>
-<label><input type="radio" name="q10" value="B"><span>B. Clair.</span></label>
-<label><input type="radio" name="q10" value="C"><span>C. Agréable à lire.</span></label>
-<label><input type="radio" name="q10" value="D"><span>D. Sans faute et structuré.</span></label>
-<label><input type="radio" name="q10" value="E"><span>E. Envoyé sur Moodle.</span></label>
-<label><input type="radio" name="q2" value="F"><span>F. Envoyé sur une plateforme sécurisée. </span></label>
-<label><input type="radio" name="q2" value="G"><span>G. Un message motivant !</span></label>
-
-</div>
-</div>
-
-<button type="button" onclick="calculateResult()">Voir mon résultat</button>
-</form>
-
-<div id="result"></div>
-
-</div>
-
 <script>
 document.querySelectorAll('.options').forEach(group => {
   const labels = group.querySelectorAll('label');
@@ -278,7 +14,8 @@ document.querySelectorAll('.options').forEach(group => {
 });
 
 function calculateResult() {
-  const scores = {A:0,B:0,C:0,D:0,E:0};
+  const scores = { A:0, B:0, C:0, D:0, E:0, F:0, G:0 };
+
   for (let i = 1; i <= 10; i++) {
     const q = document.querySelector(`input[name="q${i}"]:checked`);
     if (!q) {
@@ -289,14 +26,18 @@ function calculateResult() {
   }
 
   let max = "A";
-  for (let k in scores) if (scores[k] > scores[max]) max = k;
+  for (let k in scores) {
+    if (scores[k] > scores[max]) max = k;
+  }
 
   const poles = {
-    A: "Pôle Présidence / Secrétariat",
-    B: "Pôle Business / Trésorerie",
-    C: "Pôle Communication & Événementiel",
+    A: "Pôle Présidence",
+    B: "Pôle Business",
+    C: "Pôle Communication",
     D: "Pôle Qualité",
-    E: "Pôle Technologies de l’information"
+    E: "Pôle IT",
+    F: "Pôle Trésorerie",
+    G: "Pôle Secrétariat"
   };
 
   const r = document.getElementById("result");
@@ -304,8 +45,3 @@ function calculateResult() {
   r.textContent = "Tu corresponds au " + poles[max];
 }
 </script>
-
-</body>
-</html>
-
-
